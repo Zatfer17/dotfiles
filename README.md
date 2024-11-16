@@ -1,20 +1,10 @@
-# Ubuntu
+# My ubuntu-server i3wm setup 
 
-# Setup
-## sudo apt-get install
-- i3
-- xorg
-- arandr
-- tlp tlp-rdw
-- feh
-- acpi
-- brightnessctl
-- pavucontrol (?)
-## TODO
-- Look into dunst
-- Personalise lock
-- Tema scuro globale
-- Color palette palombo
-- Cleanup config
-- Install bumblebeebar
-- Dmenu scripts
+A minimal i3wm setup with vintage Thinkpad vibes
+
+## Screenshots
+
+![](assets/1.png)
+![](assets/2.png)
+![](assets/3.png)
+![](assets/4.png)
