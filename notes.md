@@ -9,8 +9,17 @@
 - brightnessctl
 - pulseaudio
 - scrot
+- playerctl
 
 ## Must do
 - Add user to video group (for brightness to work)
 - Reconfigure tzdata
-- Setup git to use ssh
+
+## TODO
+- [ ] Script to copy dotfiles to root
+- [ ] Improve bar
+- [ ] Fix audio
+- [ ] Look into tuis for
+    - wallpaper
+    - wifi
+    - bluetooth

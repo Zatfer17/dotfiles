@@ -20,9 +20,6 @@ exec --no-startup-id nm-applet
 # Buttons
 set $mod Mod4
 
-# Utility functions
-set $refresh_i3status killall -SIGUSR1 i3status
-
 # Terminal
 set $terminal_path i3-sensible-terminal -e byobu
 
@@ -62,12 +59,12 @@ font pango:DejaVu Sans Mono 8
 
 # Background
 #exec_always --no-startup-id hsetroot -solid "#4722A5"
-exec_always --no-startup-id hsetroot -cover "./wallpaper.png"
+exec_always --no-startup-id hsetroot -cover "Pictures/wallpaper.png"
 
 # Bar
 bar {
         #status_command i3status
-        status_command i3blocks
+        status_command i3blocks -v
         position top
         #strip_workspace_numbers yes
         padding 0 10 0 0
@@ -108,16 +105,13 @@ client.background       #FFFFFF
 ##############
 
 # Function keys
-#bindsym XF86AudioRaiseVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%              && $refresh_i3status
-#bindsym XF86AudioLowerVolume  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%              && $refresh_i3status
-#bindsym XF86AudioMute         exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle             && $refresh_i3status
-bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q set Master 5%+ && $refresh_i3status
-bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q set Master 5%- && $refresh_i3status
-#bindsym XF86AudioMute         exec --no-startup-id amixer set Master toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q set Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q set Master 5%- && pkill -RTMIN+10 i3blocks
+#bindsym XF86AudioMute         exec --no-startup-id amixer set Master toggle && pkill -RTMIN+10 i3blocks
 #bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle         && $refresh_i3status
-bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+                                 && $refresh_i3status
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-                                 && $refresh_i3status
-bindsym Print                 exec --no-startup-id scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f' && $refresh_i3status
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym Print                 exec --no-startup-id scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
 
 # Basics
 bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nf '#BBBBBB' -nb '$color2' -sb '$accent2' -sf '$white1'"
