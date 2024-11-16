@@ -1,8 +1,5 @@
 ## TODO
 # Use include /usr/share/regolith/common/config.d/*
-# Change color palette
-# Patch dmenu height
-# Fix font size
 
 ################
 ## DIRECTIVES ##
@@ -111,7 +108,7 @@ bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q set Master 5%- && p
 #bindsym XF86AudioMicMute      exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle         && $refresh_i3status
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-bindsym Print                 exec --no-startup-id scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
+bindsym Print                 exec --no-startup-id scrot '~/Pictures/Screenshot_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
 
 # Basics
 bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nf '#BBBBBB' -nb '$color2' -sb '$accent2' -sf '$white1'"
