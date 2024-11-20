@@ -1,24 +1,12 @@
 ## TODO
 # Use include /usr/share/regolith/common/config.d/*
 
-################
-## DIRECTIVES ##
-################
-
-# Applets
-exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-
 ###############
 ## VARIABLES ##   
 ###############
 
 # Buttons
 set $mod Mod4
-
-# Terminal
-set $terminal_path i3-sensible-terminal -e byobu
 
 # Workspaces
 set $ws1  "1:Uno |"
@@ -46,6 +34,15 @@ set $white1 #FFFFFF
 set $accent1 #901860
 set $accent2 #a81848
 set $accent3 #f00000
+
+################
+## DIRECTIVES ##
+################
+
+# Applets
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork --color=$color1 --no-unlock-indicator --ignore-empty-password
+#exec --no-startup-id nm-applet
 
 ################
 ## APPEARANCE ##
@@ -82,9 +79,9 @@ bar {
 
 # Borders
 #hide_edge_borders smart
-gaps inner 14
+gaps inner 4
 default_border pixel 0
-for_window [class=".*"] border pixel 8
+for_window [class=".*"] border pixel 4
 #smart_gaps on
 
 # Title Bar
